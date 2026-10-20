@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.artwork{
+    width: 600px;
+    height: 600px;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 5px;
+
+    animation: blink 18s linear infinite;
+
+    transition: transform 2s;
+}
+
+.artwork:hover{
+    transform: scale(1.08) rotate(3deg);
+}
+
+
+.pixel{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    animation: appear1 18s linear infinite,
+                move 3s ease-in-out infinite alternate;
+
+    transition: width 2s;
+}
+
+.artwork:hover .pixel{
+    width: 200%;
+}
+
+.pink{
+    background-color: #ff1493;
+}
+
+.blue{
+    background-color: #007bff;
+}
+
+.yellow{
+    background-color: #fff000;
+}
+
+.green{
+    background-color: #39ff14;
+}
+
+.orange{
+    background-color: #ff6500;
+}
+
+.purple{
+    background-color: #a020f0;
+}
+
+
+.circle{
+    border-radius: 50%;
+}
+
+.small{
+    scale: 0.55;
+}
+
+.diamond{
+    clip-path: polygon(
+        50% 0%,
+        100% 50%,
+        50% 100%,
+        0% 50%
+    );
+}
+
+.cross{
+    clip-path: polygon(
+        35% 0%, 65% 0%,
+        65% 35%, 100% 35%,
+        100% 65%, 65% 65%,
+        65% 100%, 35% 100%,
+        35% 65%, 0% 65%,
+        0% 35%, 35% 35%
+    );
+}
+
+.one{
+    animation-name: appear1, move;
+}
+
+.two{
+    animation-name: appear2, move;
+}
+
+.three{
+    animation-name: appear3, move;
+}
+
+.four{
+    animation-name: appear4, move;
+}
+
+.five{
+    animation-name: appear5, move;
+}
+
+.six{
+    animation-name: appear6, move;
+}
+
+.seven{
+    animation-name: appear7, move;
+}
+
+.eight{
+    animation-name: appear8, move;
+}
+
+@keyframes appear1{
+    0%, 2%{
+        opacity: 0;
+    }
+
+    6%, 94%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appear2{
+    0%, 6%{
+        opacity: 0;
+    }
+
+    10%, 94%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appear3{
+    0%, 10%{
+        opacity: 0;
+    }
+
+    14%, 94%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appear4{
+    0%, 14%{
+        opacity: 0;
+    }
+
+    18%, 94%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appear5{
+    0%, 18%{
+        opacity: 0;
+    }
+
+    22%, 94%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appear6{
+    0%, 22%{
+        opacity: 0;
+    }
+
+    26%, 94%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appear7{
+    0%, 26%{
+        opacity: 0;
+    }
+
+    30%, 94%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appear8{
+    0%, 30%{
+        opacity: 0;
+    }
+
+    34%, 94%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes move{
+    0%{
+        transform: translateY(-5px) rotate(-5deg);
+    }
+
+    100%{
+        transform: translateY(5px) rotate(5deg);
+    }
+}
+
+@keyframes changecolor{
+    0%{
+        background-color: #ff1493;
+    }
+
+    25%{
+        background-color: #fff000;
+    }
+
+    50%{
+        background-color: #007bff;
+    }
+
+    75%{
+        background-color: #39ff14;
+    }
+
+    100%{
+        background-color: #ff1493;
+    }
+}
+
+.pixel.pink{
+    animation-name: appear1, move, changecolor;
+    animation-duration: 18s, 3s, 4s;
+    animation-timing-function: linear, ease-in-out, linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal, alternate, normal;
+}
+
+.pixel.pink.two{
+    animation-name: appear2, move, changecolor;
+}
+
+.pixel.pink.three{
+    animation-name: appear3, move, changecolor;
+}
+
+.pixel.pink.four{
+    animation-name: appear4, move, changecolor;
+}
+
+.pixel.pink.five{
+    animation-name: appear5, move, changecolor;
+}
+
+.pixel.pink.six{
+    animation-name: appear6, move, changecolor;
+}
+
+.pixel.pink.seven{
+    animation-name: appear7, move, changecolor;
+}
+
+.pixel.pink.eight{
+    animation-name: appear8, move, changecolor;
+}
+
+@keyframes blink{
+    0%, 76%, 82%, 88%, 94%, 100%{
+        opacity: 1;
+    }
+
+    78%, 85%, 90%{
+        opacity: 0;
+    }
+}
